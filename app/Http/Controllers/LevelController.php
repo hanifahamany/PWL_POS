@@ -13,8 +13,11 @@ class LevelController extends Controller
         //            ['CUS', 'Pelanggan', now()]);
         // return 'Insert data baru berhasil';
 
-        $row = DB::update('Update m_level set level_nama = ? where level_kode = ?',
-                           ['Customer', 'CUS']);
-        return 'Update data berhasil. Jumlah data yang diupdate: ' . $row . ' baris';
+        // $row = DB::update('Update m_level set level_nama = ? where level_kode = ?',
+        //                    ['Customer', 'CUS']);
+        // return 'Update data berhasil. Jumlah data yang diupdate: ' . $row . ' baris';
+
+        $row = DB::delete('delete from m_level where level_kode = ?', ['CUS']);
+        return 'Delete data berhasil. Jumlah data yang dihapus: ' . $row. ' baris';
     }
 }
