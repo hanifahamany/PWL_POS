@@ -16,7 +16,6 @@ class UserController extends Controller
             'nama' => 'Pelanggan',
             'password' => Hash::make('12345'),
             'level_id' => 4
-
         ];
         UserModel::insert($data); // tambahkan data ke tabel m_user
 
@@ -24,5 +23,4 @@ class UserController extends Controller
         $user = UserModel::all(); // ambil semua data dari tabel m_user
         return view('user', ['data' => $user]);
     }
-
 }
