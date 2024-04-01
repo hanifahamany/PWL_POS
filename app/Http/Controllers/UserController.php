@@ -53,7 +53,7 @@ class UserController extends Controller
                 'username' => 'manager22',
                 'nama' => 'Manager Dua Dua',
                 'password' => Hash::make('12345'),
-                'level-id' => 2
+                'level_id' => 2
             ],
         );
         return view('user', ['data' => $user]);
