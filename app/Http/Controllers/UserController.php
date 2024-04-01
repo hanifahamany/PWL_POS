@@ -37,7 +37,7 @@ class UserController extends Controller
         // {
         //     abort(404);
         // });
-        $user = UserModel::findOrFail(1);
+        $user = UserModel::findOrFail(3);
         return view('user', ['data' => $user]);
     }
 }
