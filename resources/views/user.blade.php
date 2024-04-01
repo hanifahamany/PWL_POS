@@ -12,7 +12,7 @@
                 <th>Nama</th>
                 <th>ID Level Pengguna</th>
             </tr>
-            {{-- @foreach ($data as $d) --}}
+            @foreach ($data as $d)
             <tr>
                 <td>{{ $data->user_id}}</td>
                 <td>{{ $data->username}}</td>
