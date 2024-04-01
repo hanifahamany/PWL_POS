@@ -33,10 +33,11 @@ class UserController extends Controller
 
         // coba akses model UserModel
         // $user = UserModel::firstWhere('level_id', 1); // ambil semua data dari tabel m_user
-        $user = UserModel::findOr(2, ['username', 'nama'], function () 
-        {
-            abort(404);
-        });
+        // $user = UserModel::findOr(2, ['username', 'nama'], function () 
+        // {
+        //     abort(404);
+        // });
+        $user = UserModel::findOrFail(1);
         return view('user', ['data' => $user]);
     }
 }
