@@ -133,4 +133,10 @@ class UserController extends Controller
             'level_id' => $request->level_id
         ]);
     }
+
+    public function ubah($id)
+    {
+        $user = UserModel::find($id);
+        return view('user_ubah', ['data' =>$user]);
+    }
 }
