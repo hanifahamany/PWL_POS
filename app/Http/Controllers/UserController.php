@@ -32,15 +32,15 @@ class UserController extends Controller
         // UserModel::create($data);
 
         // coba akses model UserModel
-        // $user = UserModel::firstWhere('level_id', 1); // ambil semua data dari tabel m_user
+        $user = UserModel::firstWhere('level_id', 1); // ambil semua data dari tabel m_user
         // $user = UserModel::findOr(2, ['username', 'nama'], function () 
         // {
         //     abort(404);
         // });
         // $user = UserModel::findOrFail(3);
         // $user = UserModel::where('username', 'manager9')->firstOrFail();
-        $user = UserModel::where('level_id', 2)->count();
-        dd($user);
+        // $user = UserModel::where('level_id', 2)->count();
+        // dd($user);
         return view('user', ['data' => $user]);
     }
 }
