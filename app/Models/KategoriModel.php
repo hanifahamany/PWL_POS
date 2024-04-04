@@ -9,8 +9,12 @@ class KategoriModel extends Model
 {
     protected $table = 'm_kategori';
     protected $primaryKey = 'kategori_id';
-    protected $fillabel = ['kategori_kode', 'kategori_nama'];
-    // protected function barang(): HasMany
+    protected $fillable = ['kategori_kode', 'kategori_nama', 'created_at', 'updated_at'];
+
+    public function barang(): HasMany
+    {
+        return $this->hasMany(BarangModel::class, 'barang_id', 'barang_id');
+    }    // protected function barang(): HasMany
     // {
     //     return $this->HasMany(BarangModel::class, 'barang_id', 'barang_id');
     // }

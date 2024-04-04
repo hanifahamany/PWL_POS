@@ -322,6 +322,11 @@ return [
             'label' => 4,
             'label_color' => 'success',
         ],
+        [
+            'text' => 'Kategori', // Judul menu
+            'icon' => 'fas fa-list', // Icon yang digunakan
+            'url' => '/kategori', // URL menu kategori
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

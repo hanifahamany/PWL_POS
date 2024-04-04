@@ -9,7 +9,12 @@
 @section('content')
     <div class="container">
         <div class="card">
-            <div class="card-header">Manage Kategori</div>
+            <div class="card-header">
+                Manage Kategori
+                <div>
+                    <a href="{{ url('/kategori/create') }}" class="btn btn-primary float-right"><i class="fas fa-plus-circle"></i> Add</a> <!-- Tambahkan tombol Add -->
+                </div>
+            </div>
             <div class="card-body">
                 {{ $dataTable->table() }}
             </div>
