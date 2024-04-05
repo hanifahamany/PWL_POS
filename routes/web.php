@@ -4,6 +4,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\POSController;
 
 
 Route::get('/', function () {
@@ -30,3 +31,4 @@ Route::put('/kategori/save_edit/{id}', [KategoriController::class, 'save_edit'])
 Route::get('/kategori/delete/{id}', [KategoriController::class, 'deleteKtg']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/kategori/create', [KategoriController::class, 'create']);
+Route::resource('m_user', POSController::class);
