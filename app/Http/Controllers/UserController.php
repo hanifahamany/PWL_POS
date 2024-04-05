@@ -136,14 +136,22 @@ class UserController extends Controller
         return view('user_tambah');
     }
 
-    public function tambah_simpan(Request $request)
+    public function tambah_simpan(StorePostRequest $request)
     {
-        UserModel::create([
-            'username' =>$request->username,
-            'nama' => $request->nama,
-            'password' => Hash::make('$request->password'),
-            'level_id' => $request->level_id
-        ]);
+        // UserModel::create([
+        //     'username' =>$request->username,
+        //     'nama' => $request->nama,
+        //     'password' => Hash::make('$request->password'),
+        //     'level_id' => $request->level_id
+        // ]);
+
+        // Retrieve the validated input data.
+        $validated = $request->validated();
+
+        // Retrieve a portion of the validated input data
+        $validated = $request->safe()->only(['level_id', 'nama', 'password']);
+        $validated = $request->safe()->except(['level_id', 'nama', 'password']);
+
         return redirect()->route('user.tambah');
     }
 

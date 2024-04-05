@@ -35,11 +35,19 @@ class LevelController extends Controller
     }
     public function tambah_simpan(Request $request)
     {
-        LevelModel::create([
-            'level_kode' => $request->level_kode,
-            'level_nama' => $request->level_nama,
-        ]);
+        // LevelModel::create([
+        //     'level_kode' => $request->level_kode,
+        //     'level_nama' => $request->level_nama,
+        // ]);
         // return redirect('/level');
+
+        // Retrieve the validated input data
+        $validated = $request->validate();
+
+        // Retreive a portion of the validated input data
+        $validated = $request->safe()->only(['level_kode', 'level_nama']);
+        $validated = $request->safe()->except(['level_kode', 'level_nama']);
+
         return redirect()->route('level.tambah');
 
         // Retrieve a portion of the validated input data
