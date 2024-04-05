@@ -15,7 +15,8 @@ class UserController extends Controller
     // }
     public function index()
     {
-        $user = UserModel::all();
+        // $user = UserModel::all();
+        $user = UserModel::with('level')->get();
         return view('user', ['data' => $user]);
     }
 
@@ -143,6 +144,7 @@ class UserController extends Controller
             'password' => Hash::make('$request->password'),
             'level_id' => $request->level_id
         ]);
+        return redirect()->route('user.tambah');
     }
 
     public function ubah($id)
@@ -172,5 +174,4 @@ class UserController extends Controller
 
         return redirect('/user');
     }
-
 }

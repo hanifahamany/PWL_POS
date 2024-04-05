@@ -322,10 +322,21 @@ return [
             'label' => 4,
             'label_color' => 'success',
         ],
+        ['header' => 'menu'],
+        [
+            'text' => 'Level',
+            'icon' => 'fas fa-regular fa-user-plus',
+            'url' => 'level/tambah',
+        ],
+        [
+            'text' => 'User',
+            'icon' => 'fas fa-solid fa-user',
+            'url' => 'user/tambah',
+        ],
         [
             'text' => 'Kategori', // Judul menu
             'icon' => 'fas fa-list', // Icon yang digunakan
-            'url' => '/kategori', // URL menu kategori
+            'url' => 'kategori', // URL menu kategori
         ],
         ['header' => 'account_settings'],
         [
