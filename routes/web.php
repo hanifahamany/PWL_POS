@@ -5,6 +5,11 @@ use App\Http\Controllers\LevelController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\POSController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ManagerController;
+use Illuminate\Support\Facades\Auth;
+use Monolog\Level;
 
 
 Route::get('/', function () {

@@ -78,7 +78,7 @@ class AuthController extends Controller
         // validasi username itu harus unique atau tidak boleh duplicate username ya
         $validator = Validator :: make($request->all(), [
             'nama' => 'required',
-            'username' => 'required |unique:m_user',
+            'username' => 'required | unique:m_user',
             'password' => 'required'
         ]);
 
