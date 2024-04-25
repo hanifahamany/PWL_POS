@@ -32,3 +32,23 @@ Route::get('/kategori/delete/{id}', [KategoriController::class, 'deleteKtg']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/kategori/create', [KategoriController::class, 'create']);
 Route::resource('m_user', POSController::class);
+
+Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::get('register',[AuthController::class, 'register'])->name('register');
+Route::post('proses_login', [AuthController::class,'proses_login'])->name('proses_login');
+Route::get('logout',[AuthController::class,'logout'])->name('logout');
+Route::post('proses_register',[AuthController::class,'proses_register'])->name('proses_register');
+
+//Kita atur juga untuk middleware menggunakan group pada routing
+//didalamnya terdapat group untuk mengecek kondisi login
+//jika user  yang ingin login merupakan admin maka akan diarahkan ke AdminController
+//jika user yang login merupakan manager maka akan diarahkan ke UserController
+
+Route::group(['middleware'=> ['auth']], function(){
+    Route::group(['middleware'=>['cek_login:1']], function(){
+        Route::resource('admin', AdminController::class);
+    });
+    Route::group(['middleware'=>['cek_login:2']], function(){
+        Route::resource('manager', ManagerController::class);
+    });
+});
