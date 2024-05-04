@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Foundation\Auth\User as Authentication;
 
 
 class UserModel extends \Illuminate\Foundation\Auth\User
